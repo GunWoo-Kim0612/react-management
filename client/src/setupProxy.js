@@ -2,6 +2,7 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 // src/setupProxy.js
+// 접근할 url 을 허용해줬다
 module.exports = function (app) {
     app.use(
         createProxyMiddleware('/api/customers', {
