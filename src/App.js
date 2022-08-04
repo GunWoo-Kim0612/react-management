@@ -56,32 +56,21 @@ const customers = [
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        {/* ctrl + d로 인덱스 multiple 선택 가능 */}
-        <Customer
-          id={customers[0].id}
-          image={customers[0].image}
-          name={customers[0].name}
-          birthday={customers[0].birthday}
-          gender={customers[0].gender}
-          job={customers[0].job}
-        ></Customer>
-        <Customer
-          id={customers[1].id}
-          image={customers[1].image}
-          name={customers[1].name}
-          birthday={customers[1].birthday}
-          gender={customers[1].gender}
-          job={customers[1].job}
-        ></Customer>
-        <Customer
-          id={customers[2].id}
-          image={customers[2].image}
-          name={customers[2].name}
-          birthday={customers[2].birthday}
-          gender={customers[2].gender}
-          job={customers[2].job}
-        ></Customer>
+      <div className="App">{
+
+        customers.map(c => {
+          return (
+            <Customer
+              id={c.id}
+              image={c.image}
+              name={c.name}
+              birthday={c.birthday}
+              gender={c.gender}
+              job={c.job}>
+            </Customer>
+          );
+        })
+      }
       </div>
     );
   }
